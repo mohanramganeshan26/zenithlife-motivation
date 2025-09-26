@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZenithLife Motivation</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow: hidden;
+  }
+  #slogan {
+    font-size: 2rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+</style>
+</head>
+<body>
+<div id="slogan">Stay Hydrated 💧</div>
+
+<script>
+const slogans = [
+  "Stay Hydrated 💧",
+  "Stay Motivated 💪",
+  "Stay Strong 🔥",
+  "Push Your Limits 🚀",
+  "Achieve Greatness 🌟"
+];
+
+let index = 0;
+const sloganEl = document.getElementById("slogan");
+
+function showSlogan() {
+  sloganEl.style.opacity = 0;
+  setTimeout(() => {
+    sloganEl.textContent = slogans[index];
+    sloganEl.style.opacity = 1;
+    index = (index + 1) % slogans.length;
+  }, 1000); // fade out 1s
+}
+
+setInterval(showSlogan, 4000); // 4 seconds per slogan
+</script>
+</body>
+</html>
